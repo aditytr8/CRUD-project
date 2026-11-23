@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <h1>Product Management</h1>
+        <span>CRUD Application</span>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="dashboard">
+        <h2>Dashboard</h2>
+        <p>Kelola data produk kamu disini</p>
+        <div class="stats">
+          <div class="stat-card">
+            <h3>Total Produk</h3>
+            <p id="total-products">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>Produk Ditampilkan</h3>
+            <p id="displayed-products">0</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>Tambah Produk</h2>
+        <form id="product-form">
+          <div class="form-group">
+            <label for="product-name"> Nama Produk </label>
+            <input
+              type="text"
+              id="product-name"
+              placeholder="Masukkan nama produk"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="product-price">Harga Produk</label>
+            <input
+              type="number"
+              id="product-price"
+              placeholder="Masukkan harga produk"
+              min="0"
+              step="any"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="product-category">Kategori</label>
+            <input
+              type="text"
+              id="product-category"
+              placeholder="Masukkan kategori produk"
+              required
+            />
+          </div>
+          <button type="submit" id="submit-button">Tambah Produk</button>
+
+          <button type="button" id="cancel-edit-button" hidden>Batal</button>
+        </form>
+      </section>
+      <section class="product-section">
+        <h2>Daftar Produk</h2>
+        <p id="loading-message" class="message">Membuat data produk</p>
+        <p id="error-message" class="message error"></p>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nama Produk</th>
+                <th>Harga</th>
+                <th>Kategori</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="product-list">
+              <!-- data dari API akan ditampilkan disini -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
